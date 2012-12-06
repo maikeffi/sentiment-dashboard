@@ -1,0 +1,30 @@
+<html>
+<head>
+</head>
+<body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+<div id="chart"></div>
+<script>
+  google.load('visualization', '1', {packages:['gauge', 'geochart']});
+  google.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+
+    $.getJSON('/data.json', function(jdata) {
+
+      var world = new google.visualization.GeoChart(document.getElementById('chart'));
+
+      data = [['Country', 'Sentiment']];
+      console.log(jdata);
+      for (var i = 0; i < jdata.countries.length; i++) {
+        data.push([jdata.countries[i], jdata.tweets[i]]);
+      }
+
+      world.draw(google.visualization.arrayToDataTable(data));
+    });
+  }
+  
+</script>
+</body>
+</html>
