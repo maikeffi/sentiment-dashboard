@@ -2,20 +2,22 @@
 <head>
 </head>
 <body>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+
+<h1>Map</h1>
 <div id="chart"></div>
+
 <script>
-  google.load('visualization', '1', {packages:['gauge', 'geochart']});
+  google.load('visualization', '1', {packages:['geochart']});
   google.setOnLoadCallback(drawChart);
 
   function drawChart() {
+	
+	var world = new google.visualization.GeoChart(document.getElementById('chart'));
 
-     var world = new google.visualization.GeoChart(document.getElementById('chart'));
-
-     data = [['Country', 'Sentiment'], ['US', 1]];
-
-     world.draw(google.visualization.arrayToDataTable(data));
+    data = [['Country', 'Sentiment'], 
+            ['US', -.77]];
+    world.draw(google.visualization.arrayToDataTable(data));
   }
 </script>
 </body>

@@ -1,8 +1,8 @@
 library(plyr)
 library(stringr)
 
-pos <- scan('positive.txt', what='character')
-neg <- scan('negative.txt', what='character')
+pos <- scan('positive.txt', what='character', sep='\n')
+neg <- scan('negative.txt', what='character', sep='\n')
 
 sentiment <- function(sentences, ref.words)
 {

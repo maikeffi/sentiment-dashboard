@@ -19,10 +19,10 @@ app.get('/data.json', function (req, res) {
 });
 
 var T = new Twit({
-    consumer_key:         'AdNLMw3FCYFgxNJTS6xFw'
-  , consumer_secret:      'OZ9WB0IlhKZIQcZd4WoxSRoemqQmUFnl3xeLLxrCCg'
-  , access_token:         '36223965-Oge38wOSsCV2cuSfl5jOf5XX32fbsmE7qYw73VXhq'
-  , access_token_secret:  'A9nyo0aaoCQrcMD0fpWu4PAnNheJ4lPZUD8lTPGvx7A'
+      consumer_key:         'CrtktWvOl0xR1lDV4rMVAA'
+    , consumer_secret:      'guNeZTl3He5yD3kJ4lIH5T52Xnbti1A4Umauj4V08jM'
+    , access_token:         '202459962-JWLKxFw9R09h1samBCAwqjFCulzNyN70vJnWwc3B'
+    , access_token_secret:  'nBSRcQlTHVzUFnRqyj0K5Cc3ajRgugeZw5HFSdyY'
 });
 
 var stream = T.stream('statuses/filter', { track:'coke,mcdonalds,burger,fries' }) //, locations: [-180, -75, 180, 75] });

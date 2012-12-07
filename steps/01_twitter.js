@@ -2,10 +2,10 @@ var redis = require('redis').createClient();
 
 var Twit   = require('twit');
 var stream = new Twit({
-    consumer_key:         'AdNLMw3FCYFgxNJTS6xFw'
-  , consumer_secret:      'OZ9WB0IlhKZIQcZd4WoxSRoemqQmUFnl3xeLLxrCCg'
-  , access_token:         '36223965-Oge38wOSsCV2cuSfl5jOf5XX32fbsmE7qYw73VXhq'
-  , access_token_secret:  'A9nyo0aaoCQrcMD0fpWu4PAnNheJ4lPZUD8lTPGvx7A'
+    consumer_key:         'CrtktWvOl0xR1lDV4rMVAA'
+  , consumer_secret:      'guNeZTl3He5yD3kJ4lIH5T52Xnbti1A4Umauj4V08jM'
+  , access_token:         '202459962-JWLKxFw9R09h1samBCAwqjFCulzNyN70vJnWwc3B'
+  , access_token_secret:  'nBSRcQlTHVzUFnRqyj0K5Cc3ajRgugeZw5HFSdyY'
 })
 
 .stream('statuses/filter', 
@@ -13,8 +13,6 @@ var stream = new Twit({
 
 .on('tweet', function (tweet) {
     console.log(tweet.place['country_code'] + ' ' + tweet.text);
-console.log(redis);
     redis.lpush('countries', tweet.place['country_code']);
     redis.lpush('tweets', tweet.text);
-    redis.set('update', 'yes');
 });
