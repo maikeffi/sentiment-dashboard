@@ -8,7 +8,7 @@ var express = require('express'),
 var client = redis.createClient(),
     client2 = redis.createClient();
 
-server.listen(9000);
+server.listen(process.env.PORT || 8000);
 
 app.get('/', function (req, res) {
   res.sendfile(__dirname + '/index.html');
