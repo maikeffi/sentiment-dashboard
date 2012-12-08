@@ -1,6 +1,6 @@
 Are the Tweets happy?
 
-Real-time Twitter sentiment dashboard.
+Real-time Twitter sentiment dashboard.  Demo: http://sentiment-dashboard.dirkneumann.opani.com
 
 Bash
 ====
