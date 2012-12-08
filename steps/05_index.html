@@ -1,0 +1,24 @@
+<html>
+<head>
+</head>
+<body>
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+
+<h1>Map</h1>
+<div id="chart"></div>
+
+<script>
+  google.load('visualization', '1', {packages:['geochart']});
+  google.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+	
+	var world = new google.visualization.GeoChart(document.getElementById('chart'));
+
+    data = [['Country', 'Sentiment'], 
+            ['US', -.77]];
+    world.draw(google.visualization.arrayToDataTable(data));
+  }
+</script>
+</body>
+</html>
