@@ -19,7 +19,11 @@
         data.push([jdata.countries[i], jdata.tweets[i]]);
       }
       console.log(data);
-      world.draw(google.visualization.arrayToDataTable(data), null);
+      world.draw(google.visualization.arrayToDataTable(data), 
+        { animation: {
+          duration: 1000,
+          easing: 'out',
+        });
     });
   }
   
