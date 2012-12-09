@@ -41,7 +41,7 @@ var T = new Twit({
 var stream = T.stream('statuses/filter', { track:'coke,mcdonalds,burger,fries' }) //, locations: [-180, -75, 180, 75] });
 
 stream.on('tweet', function (tweet) {
-  console.log(tweet.place['country_code'] + ' ' + tweet.text);
+  // console.log(tweet.place['country_code'] + ' ' + tweet.text);
   client.lpush('countries', tweet.place['country_code']);
   client.lpush('tweets', tweet.text);
   client.set('update', 'yes');
