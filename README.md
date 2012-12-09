@@ -1,10 +1,11 @@
 Are the Tweets happy?
 
+Info
+====
 Real-time Twitter sentiment dashboard.  Demo: http://sentiment-dashboard.dirkneumann.opani.com
 
 Bash
 ====
-
     brew install git node redis   *)
     npm install -g git://github.com/opani/node-opani.git
     git clone git@opani.com:dirkneumann/sentiment-dashboard.git
@@ -15,7 +16,6 @@ Bash
 
 R
 ====
-
     install.packages('rredis', repos='http://cran.r-project.org')
     library(rredis)
     redisConnect()
@@ -29,7 +29,6 @@ R
 
 Node
 ====
-
     node 04_data.js
     open 05_index.html
     node 06_server.js
@@ -38,7 +37,6 @@ Node
 
 *) Redis
 ====
-
     # To have launchd start redis at login:
     ln -sfv /Users/dirk/homebrew/opt/redis/*.plist ~/Library/LaunchAgents
     # Then to load redis now:
