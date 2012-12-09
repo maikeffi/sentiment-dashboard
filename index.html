@@ -7,12 +7,16 @@
 <script src="/socket.io/socket.io.js"></script>
 <script>
   google.load('visualization', '1', {packages:['gauge', 'geochart']});
-  google.setOnLoadCallback(drawChart);
+  var world;
+  google.setOnLoadCallback(function onLoad() {
+    world = new google.visualization.GeoChart(document.getElementById('chart'));
+    drawChart();
+  });
 
   function drawChart() {
     console.log('draw');
     $.getJSON('/data.json', function(jdata) {
-      var world = new google.visualization.GeoChart(document.getElementById('chart'));
+      
       data = [['Country', 'Sentiment']];
       console.log(jdata);
       for (var i = 0; i < jdata.countries.length; i++) {
